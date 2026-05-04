@@ -2,7 +2,6 @@
 " Licensed under the ISC License. Full text available in the
 " LICENSE file at the repository root.
 
-" General
 syntax off
 set title
 set number
@@ -26,20 +25,17 @@ set listchars=tab:>-,trail:·
 filetype plugin indent on
 autocmd CursorHold * echo ""
 
-" Linux kernel
 set tabstop=8
 set noexpandtab
 set shiftwidth=8
 set softtabstop=8
 
-" Shortcuts
 nnoremap <space> <nop>
 vnoremap <space> <nop>
 nnoremap <silent> <leader>l :call ToggleList()<CR>
 nnoremap <silent> <leader>r :call ToggleRulers()<CR>
 nnoremap <silent> <leader>h :call ToggleHighlighting()<CR>
 
-" Toggle vertical rulers
 function! ToggleRulers()
 	if &colorcolumn == ""
 		set colorcolumn=81,101
@@ -50,7 +46,6 @@ function! ToggleRulers()
 	endif
 endfunction
 
-" Toggle whitespace and tab visibility
 function! ToggleList()
 	if &list
 		set nolist
@@ -61,7 +56,6 @@ function! ToggleList()
 	endif
 endfunction
 
-" Toggle syntax highlighting
 function! ToggleHighlighting()
 	if exists("g:syntax_on")
 		syntax off
@@ -72,10 +66,9 @@ function! ToggleHighlighting()
 	endif
 endfunction
 
-" Visual
-highlight LineNr       ctermfg=244
-highlight CursorLineNr ctermfg=250
-highlight ColorColumn  ctermbg=238
-highlight NonText      ctermfg=244
-highlight SpecialKey   ctermfg=244
-highlight MatchParen   ctermbg=208
+hi LineNr       ctermfg=244
+hi CursorLineNr ctermfg=250
+hi ColorColumn  ctermbg=238
+hi NonText      ctermfg=244
+hi SpecialKey   ctermfg=244
+hi MatchParen   ctermbg=208
